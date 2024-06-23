@@ -6,11 +6,11 @@ int main(int argc, char **argv) {
   sleep(1);
   cputs("world");
   sleep(2);
-  cputs("git");
+  cputs("git  ");
   sleep(3);
-  cputs("hub");
+  cputs("hub  ");
   sleep(2);
-  cputs("demo");
+  cputs("demo ");
   sleep(1);
   cls();
   
