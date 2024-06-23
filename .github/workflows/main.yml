@@ -11,7 +11,7 @@ jobs:
       - name: Install toolchain
         run: sudo apt-get install -y binutils-h8300-hms gcc-h8300-hms brickos
       - name: Compile brickOS examples
-        run: make
+        run: make && pwd
       - name: Upload firmware
         uses: actions/upload-artifact@v1.0.0
         with:
@@ -21,4 +21,4 @@ jobs:
         uses: actions/upload-artifact@v1.0.0
         with:
           name: user programs
-          path: '*.lx'
+          path: ${{ github.workspace }}/**/*.lx
