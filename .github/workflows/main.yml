@@ -13,12 +13,12 @@ jobs:
       - name: Compile brickOS examples
         run: make && pwd
       - name: Upload firmware
-        uses: actions/upload-artifact@v1.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: brickOS firmware
           path: '/usr/lib/brickos/brickOS.srec'
       - name: Upload user programs
-        uses: actions/upload-artifact@v1.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: user programs
-          path: helloworld.lx
+          path: '**/*.lx'
