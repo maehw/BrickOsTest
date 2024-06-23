@@ -12,3 +12,13 @@ jobs:
         run: sudo apt-get install -y binutils-h8300-hms gcc-h8300-hms brickos
       - name: Compile brickOS examples
         run: make
+      - name: Upload firmware
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: brickOS firmware
+          path: '/usr/lib/brickos/brickOS.srec'
+      - name: Upload user programs
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: user programs
+          path: '**/*.lx'
