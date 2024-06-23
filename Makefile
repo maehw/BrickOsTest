@@ -1,5 +1,6 @@
 ### ==========================================================================
-###  Based on demo/Makefile (C Language Demo Programs), v 1.7 2002/10/17
+###  $Id: Makefile,v 1.7 2002/10/17 05:05:40 stephmo Exp $
+###  FILE: demo/Makefile - make the C Language Demo Programs
 ###  brickOS - the independent LEGO Mindstorms OS
 ### --------------------------------------------------------------------------
 
@@ -7,21 +8,15 @@
 LIBDIR = /usr/lib/brickos
 KERNEL = $(LIBDIR)/brickOS
 
-# Find all .c files and replace the .c extension with .lx
-SOURCES = $(wildcard *.c)
-PROGRAMS = $(SOURCES:.c=.lx)
+PROGRAMS=helloworld.lx
 
 # extra dynamic sources
 DOBJECTS=
 
-all:: $(PROGRAMS)
+all:: $(PROGRAMS) 
 
 include $(LIBDIR)/Makefile.common
 include $(LIBDIR)/Makefile.user
-
-# Rule to compile .c files to .lx files
-%.lx: %.c
-	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
 
 .depend: *.c
 	$(MAKEDEPEND) *.c > .depend
