@@ -1,0 +1,13 @@
+name: Test build for brickOS
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install platform
+        run: |
+          sudo apt-get install -y binutils-h8300-hms gcc-h8300-hms brickos
+      - name: Compile brickOS examples
+        run: make
