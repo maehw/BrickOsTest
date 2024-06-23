@@ -8,7 +8,7 @@
 LIBDIR = /usr/lib/brickos
 KERNEL = $(LIBDIR)/brickOS
 
-PROGRAMS=helloworld.lx
+PROGRAMS=helloworld.lx linetrack.lx robots.lx rover.lx sound.lx
 
 # extra dynamic sources
 DOBJECTS=
