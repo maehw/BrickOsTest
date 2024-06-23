@@ -6,8 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install platform
-        run: |
-          sudo apt-get install -y binutils-h8300-hms gcc-h8300-hms brickos
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install toolchain
+        run: sudo apt-get install -y binutils-h8300-hms gcc-h8300-hms brickos
       - name: Compile brickOS examples
         run: make
